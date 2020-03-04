@@ -11,8 +11,11 @@ if (process.argv.length < 4) {
 var option = process.argv[2];
 
 if (option == "trending") {
-  day = process.argv[3];
-  getDailyTrendsForDay(day);
+  day = process.argv[3].toString().trim();
+  console.log(day);
+  date = new Date(day);
+  console.log(date);
+  getDailyTrendsForDay(date);
 } else if (option == "interest") {
   var searchTerm = process.argv[3];
   getInterestOverTimeForKeyword(searchTerm);
